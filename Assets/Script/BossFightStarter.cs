@@ -1,13 +1,16 @@
+using UnityEngine;
 using Leopotam.Ecs;
 using Voody.UniLeo;
-using UnityEngine;
+using IJunior.TypedScenes;
 
-public class GameStarter : MonoBehaviour
+public class BossFightStarter : MonoBehaviour, ISceneLoadHandler<LevelConfig>
 {
-    [SerializeField] private SceneChanger _sceneChanger;
+    [SerializeField] private DataSaver _dataSaver;
+    [SerializeField] private RewardScreen _rewardSreen;
 
     private EcsWorld _world = null;
     private EcsSystems _systems = null;
+    private LevelConfig _levelConfig;
 
     private void Awake()
     {
@@ -36,18 +39,20 @@ public class GameStarter : MonoBehaviour
 
     private void AddSystems()
     {
-        _systems.Add(new PlayerInputSystem());
-        _systems.Add(new CollectItemsSystem());
-        _systems.Add(new MovementSystem());
-        _systems.Add(new RotateSystem());
-        _systems.Add(new CameraMovementSystem());
-        _systems.Add(new PlayerSizeChangerSystem());
-        _systems.Add(new TimerSystem());
-        _systems.Add(new TimerStopSystem());
+        _systems.Add(new BossSizeScaleSystem());
+        _systems.Add(new PlayerSizeScaleSystem());
+        _systems.Add(new BossFightSystem());
     }
 
     private void AddInjections()
     {
-        _systems.Inject(_sceneChanger);
+        _systems.Inject(_dataSaver);
+        _systems.Inject(_levelConfig);
+        _systems.Inject(_rewardSreen);
+    }
+
+    public void OnSceneLoaded(LevelConfig argument)
+    {
+        _levelConfig = argument;
     }
 }
