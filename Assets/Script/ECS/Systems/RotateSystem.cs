@@ -9,7 +9,7 @@ public class RotateSystem : IEcsRunSystem
     {
         foreach(int i in _playerFilter)
         {
-            ref RotateComponent rotateComponent = ref _playerFilter.Get1(i);
+            RotateComponent rotateComponent = _playerFilter.Get1(i);
             ref ModelComponent modelComponent = ref _playerFilter.Get2(i);
             modelComponent.ModelTransform.rotation = Rotate(rotateComponent.Rotation);
         }

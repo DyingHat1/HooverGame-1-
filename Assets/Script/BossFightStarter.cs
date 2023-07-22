@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using Leopotam.Ecs;
 using Voody.UniLeo;
@@ -37,10 +38,17 @@ public class BossFightStarter : MonoBehaviour, ISceneLoadHandler<LevelConfig>
         _world = null;
     }
 
+    public void OnSceneLoaded(LevelConfig argument)
+    {
+        _levelConfig = argument;
+    }
+
     private void AddSystems()
     {
         _systems.Add(new BossSizeScaleSystem());
         _systems.Add(new PlayerSizeScaleSystem());
+        _systems.Add(new DistanceToPlayerSystem());
+        _systems.Add(new SetCameraPositionSystem());
         _systems.Add(new BossFightSystem());
     }
 
@@ -49,10 +57,5 @@ public class BossFightStarter : MonoBehaviour, ISceneLoadHandler<LevelConfig>
         _systems.Inject(_dataSaver);
         _systems.Inject(_levelConfig);
         _systems.Inject(_rewardSreen);
-    }
-
-    public void OnSceneLoaded(LevelConfig argument)
-    {
-        _levelConfig = argument;
     }
 }

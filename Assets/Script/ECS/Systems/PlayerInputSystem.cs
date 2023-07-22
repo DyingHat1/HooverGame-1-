@@ -15,9 +15,14 @@ public class PlayerInputSystem : IEcsRunSystem
         {
             Vector3 direction = _directionFilter.Get1(i).PlayerController.Direction;
             SetDirection(direction);
-            SetRotation();
+            
+            if (direction != Vector3.zero)
+            {
+                SetRotation();
+                _directionFilter.Get3(i).Rotation = _rotation;
+            }
+
             _directionFilter.Get2(i).Direction = _direction;
-            _directionFilter.Get3(i).Rotation = _rotation;
         }
     }
 

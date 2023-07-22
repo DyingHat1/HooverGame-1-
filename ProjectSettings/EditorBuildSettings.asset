@@ -14,4 +14,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BossFight.unity
     guid: 1d88fa507ce3f7840a2de7e6455a1a2b
+  - enabled: 1
+    path: Assets/Models/LowPolyFoodLite/Scenes/LowPolyFoodLite_Overview.unity
+    guid: 830555991cbd4ab4ea246bff692685a3
+  - enabled: 1
+    path: Assets/Models/LowPolyMedievalPropsLite/Scenes/MedievalPropsLite_Overview.unity
+    guid: ba549bf015552c242b8d05037cae1f46
+  - enabled: 1
+    path: Assets/Models/LowPolyMedievalPropsLite/Scenes/MedievalPropsLite_Demo.unity
+    guid: 7a5bbec1c3009264f9c83de34dab247e
+  - enabled: 1
+    path: Assets/Models/Mini Legion Grunt PBR HP Polyart/Scene/TogetherScene.unity
+    guid: 1d2d5326d1b82674881beadbe3e8d0ec
+  - enabled: 1
+    path: Assets/Models/OArielG/2DSimpleUIPack/Examples/Scenes/Mobile_Game_Example.unity
+    guid: 70188d1b9c37985459c50b67fd7b69b9
+  - enabled: 1
+    path: Assets/Models/OArielG/2DSimpleUIPack/Examples/Scenes/Level_Select_Example.unity
+    guid: 797228d78a074e745b625ad0c58781b0
+  - enabled: 1
+    path: Assets/Models/OArielG/2DSimpleUIPack/Examples/Scenes/Main_Menu_Example.unity
+    guid: 9f023e189d56ee24b8a1e65f6d3ff7d5
   m_configObjects: {}
