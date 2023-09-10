@@ -9,6 +9,7 @@ public class RewardScreen : MonoBehaviour
     [SerializeField] private SceneChanger _sceneChanger;
     [SerializeField] private DataSaver _dataSaver;
     [SerializeField] private int _minReward;
+    [SerializeField] private int _bonusFromBoss;
 
     private int _reward;
 
@@ -29,6 +30,7 @@ public class RewardScreen : MonoBehaviour
 
         if (isPlayerWon)
         {
+            _reward += _bonusFromBoss;
             _reward *= level;
             level++;
         }
