@@ -11,7 +11,7 @@ public class TimerStopSystem : IEcsRunSystem
     {
         foreach(int i in _eventsFilter)
         {
-            if (_eventsFilter.Get1(i).Value <= 0.01f)
+            if (_eventsFilter.Get1(i).Value <= 0.05f)
             {
                 float playerSize = _playerFilter.Get2(0).Size;
                 _eventsFilter.GetEntity(i).Del<TimerComponent>();

@@ -893,7 +893,8 @@ MonoBehaviour:
   _rewardView: {fileID: 578517909}
   _sceneChanger: {fileID: 1295072878}
   _dataSaver: {fileID: 1295072876}
-  _minReward: 200
+  _minReward: 50
+  _bonusFromBoss: 150
 --- !u!1 &1627421219
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,7 +1394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6700299261176336848, guid: 78748ffc2647c9546a6cf5fe5ccadd0d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -37.38
+      value: 8.05
       objectReference: {fileID: 0}
     - target: {fileID: 6700299261176336848, guid: 78748ffc2647c9546a6cf5fe5ccadd0d, type: 3}
       propertyPath: m_LocalPosition.y
